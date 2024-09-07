@@ -13,7 +13,7 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 # executa comando SQL
-mycursor.execute("SHOW DATABASES")
+mycursor.execute("SHOW TABLES")
 
 for x in mycursor:
   print(x) 

@@ -9,9 +9,11 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-mycursor.execute("INSERT INTO administradores_tbl VALUES (DEFAULT, 'Ash', '1234', 'Ash@gmail.com')")
+# insere valores na tabela 'administradores_tbl'
+mycursor.execute("INSERT INTO administradores_tbl VALUES (DEFAULT, 'Ash', 'Pikachu', 'Ash@gmail.com')")
 
-# é necessário para fazer mudanças na tabela
+# # salva as mudanças feitas (é necessário para fazer mudanças na tabela)
 mydb.commit()
 
+# exibe o número de registros inseridos
 print(mycursor.rowcount, "inserido")

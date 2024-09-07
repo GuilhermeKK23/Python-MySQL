@@ -7,13 +7,14 @@ mydb = mysql.connector.connect(
     database = "gerenciador_de_horarios_db"
 )
 
-mycursor = mydb.cursor()
+cursor = mydb.cursor()
 
-# seleciona todos os registros da tabela 'administradores_tbl'
-mycursor.execute("SELECT * FROM administradores_tbl")
+# ordena os registros pela coluna 'usuario_adm', evitando SQL injection
+sql = "SELECT * FROM administradores_tbl ORDER BY usuario_adm"
+cursor.execute(sql)
 
 # busca todas as linhas do último comando executado
-myresult = mycursor.fetchall()
+result = cursor.fetchall()
 
-for x in myresult:
+for x in result:
     print(x)
